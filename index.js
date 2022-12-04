@@ -11,7 +11,9 @@ const { getUserList, addUser, removeUser, findUser } = require("./App/src/utils/
 
 const publicPathDirectory = path.join(__dirname, "../public")
 app.use(express.static(publicPathDirectory))
-
+app.use("/", (req, res) => {
+    res.send("hello")
+})
 const server = http.createServer(app)
 const io = socketio(server)
 
