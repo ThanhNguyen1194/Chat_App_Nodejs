@@ -9,11 +9,11 @@ const Filter = require("bad-words")
 const { createMessages } = require("./App/src/utils/create-messages")
 const { getUserList, addUser, removeUser, findUser } = require("./App/src/utils/users")
 
-const publicPathDirectory = path.join(__dirname, "../public")
+const publicPathDirectory = path.join(__dirname, "./App/public")
 app.use(express.static(publicPathDirectory))
-app.use("/", (req, res) => {
-    res.send("hello")
-})
+// app.use("/", (req, res) => {
+//     res.send("hello")
+// })
 const server = http.createServer(app)
 const io = socketio(server)
 
